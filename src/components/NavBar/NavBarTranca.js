@@ -17,9 +17,15 @@ import "./NavBar.css";
 
 class NavBarTranca extends Component {
   render() {
+    const isLogged = true;
     return (
       <Router>
-        <Navbar className="navContainer" variant="dark" color="white" expand="lg">
+        <Navbar
+          className="navContainer"
+          variant="dark"
+          color="white"
+          expand="lg"
+        >
           <Container fluid>
             <Navbar.Brand href="#">Rolling-Menú</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
@@ -38,26 +44,28 @@ class NavBarTranca extends Component {
                 <Nav.Link as={Link} to="/contact">
                   Contact
                 </Nav.Link>
-                <NavDropdown title="Link" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">
-                    Something else here
-                  </NavDropdown.Item>
-                </NavDropdown>
               </Nav>
-              <Form className="d-flex">
-                <FormControl
-                  type="search"
-                  placeholder="Search"
-                  className="me-2"
-                  aria-label="Search"
-                />
-                <Button variant="outline-success">Search</Button>
-              </Form>
+              <Container className="w-100">
+                <Form className="d-flex">
+                  <FormControl
+                    type="search"
+                    placeholder="Search"
+                    className="me-2"
+                    aria-label="Search"
+                  />
+                </Form>
+              </Container>
+              <Container className="d-flex justify-content-end m-2">
+                {
+                  isLogged
+                  ? <Button className="mx-2" as={Link} to="/login">
+                  Log out
+                </Button>
+                : <Button className="mx-2" as={Link} to="/contact">
+                Log in
+              </Button>
+                }
+              </Container>
             </Navbar.Collapse>
           </Container>
         </Navbar>
