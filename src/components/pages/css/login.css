@@ -1,0 +1,6 @@
+.pageFormat{
+    display: flex;
+    height: 50em;
+    align-items: center;
+    border: 3px solid black;
+}
