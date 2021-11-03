@@ -1,54 +1,32 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   Navbar,
   Container,
   Nav,
-  NavDropdown,
   Form,
   FormControl,
   Button,
 } from "react-bootstrap";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import About from "../pages/about";
-import Contact from "../pages/contact";
-import Home from "../pages/home";
 
 import "./NavBar.css";
 
-class NavBarTranca extends Component {
-  render() {
+export default function NavBar() {
+    let isLogged = false;
     return (
-      <Router>
-        <Navbar className="navContainer" variant="dark" color="white" expand="lg">
-          <Container fluid>
-            <Navbar.Brand href="#">Rolling-Menú</Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse id="navbarScroll">
-              <Nav
-                className="me-auto my-2 my-lg-0"
-                style={{ maxHeight: "100px" }}
-                navbarScroll
-              >
-                <Nav.Link as={Link} to="/home">
-                  Home
-                </Nav.Link>
-                <Nav.Link as={Link} to="/about">
-                  About
-                </Nav.Link>
-                <Nav.Link as={Link} to="/contact">
-                  Contact
-                </Nav.Link>
-                <NavDropdown title="Link" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">
-                    Something else here
-                  </NavDropdown.Item>
-                </NavDropdown>
-              </Nav>
+      <Navbar className="navContainer" variant="dark" color="white" expand="lg">
+        <Container fluid>
+          <Navbar.Brand href="/">Rolling-Menú</Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
+            <Nav
+              className="me-auto my-2 my-lg-0"
+              style={{ maxHeight: "100px" }}
+              navbarScroll
+            >
+              <Nav.Link href="/about">About</Nav.Link>
+              <Nav.Link href="/contact">Contact</Nav.Link>
+            </Nav>
+            <Container className="w-100">
               <Form className="d-flex">
                 <FormControl
                   type="search"
@@ -56,27 +34,21 @@ class NavBarTranca extends Component {
                   className="me-2"
                   aria-label="Search"
                 />
-                <Button variant="outline-success">Search</Button>
               </Form>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-        <div>
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/home">
-              <Home />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+            </Container>
+            <Container className="d-flex justify-content-end m-2">
+              {isLogged ? (
+                <Button className="mx-2" href="/home">
+                  Log out
+                </Button>
+              ) : (
+                <Button className="mx-2" href="/login">
+                  Log in
+                </Button>
+              )}
+            </Container>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     );
-  }
 }
-
-export default NavBarTranca;

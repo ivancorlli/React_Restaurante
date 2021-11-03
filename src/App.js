@@ -1,17 +1,16 @@
-import React from 'react';
-// import NavBar from './components/NavBar/NavBar';
+/* import React, { Fragment } from 'react'; */
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import NavBarTranca from './components/NavBar/NavBarTranca';
-import NavBar from './components/navbar/NavBar';
-
+import AppRouter from './components/Routers/AppRouter';
+import NavBarTranca from './components/NavBar/NavBarTranca'
+/* import Carousel from './components/Carousel/Carousel' */
 
 function App() {
   return (
-    <>
-      {/* <NavBarTranca/> */}
-      <NavBar/>
-    </>
-  );
+    <div>
+      <NavBarTranca/>
+      <AppRouter></AppRouter>
+    </div>
+  )
 }
 
 export default App;
