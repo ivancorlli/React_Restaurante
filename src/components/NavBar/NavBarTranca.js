@@ -38,11 +38,11 @@ export default function NavBar() {
             </Container>
             <Container className="d-flex justify-content-end m-2">
               {isLogged ? (
-                <Button className="mx-2" href="/home">
+                <Button variant="outline-light" className="mx-2" href="/home">
                   Log out
                 </Button>
               ) : (
-                <Button className="mx-2" href="/login">
+                <Button variant="outline-light" className="mx-2" href="/login">
                   Log in
                 </Button>
               )}

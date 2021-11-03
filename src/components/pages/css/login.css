@@ -1,6 +1,12 @@
-.pageFormat{
-    display: flex;
-    height: 50em;
-    align-items: center;
-    border: 3px solid black;
+.pageFormat {
+  display: flex;
+  height: 50em;
+  align-items: center;
+}
+
+.textColor {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.3);
+  text-shadow: 4px 3px 0 #7a7a7a;
+  border-radius: 5px;
 }
