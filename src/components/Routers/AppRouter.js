@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
 import Login from '../pages/login'
+import Home from '../pages/Home/home'
 
 export default function AppRouter() {
   return (
@@ -13,7 +14,7 @@ export default function AppRouter() {
           <h1>Contact</h1>
         </Route>
         <Route exact path="/">
-          <h1>Home</h1>
+          <Home/>
         </Route>
         <Route exact path="/login">
           <Login/>
