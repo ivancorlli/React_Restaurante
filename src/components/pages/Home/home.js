@@ -2,7 +2,8 @@ import React, { Fragment } from "react";
 import { Grid } from "@mui/material";
 import Carousel from "../Home/Carousel";
 import { Container } from "react-bootstrap";
-import CardFood from "../../CarFood/CardFood";
+import CardFood from "../../Card/CardFood";
+import CardPromo from "../../Card/CardPromo";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
         </Grid>
       </Container>
       <Container fluid>
-        
+        <CardPromo/>
       </Container>
     </Fragment>
   );
