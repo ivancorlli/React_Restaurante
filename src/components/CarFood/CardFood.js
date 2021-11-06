@@ -15,16 +15,22 @@ export default function CardFood() {
      title: "Pastas"},
 
      {image: "./media/img/Card/Parrilla.jpg",
-     title: "Parrillada",}
+     title: "Parrillada",},
+
+     {image: "./media/img/Card/Postre.jpg",
+     title: "Postres"},
+
+     {image: "./media/img/Card/Cafe.jpg",
+     title: "Cafetería"}
   ];
 
   const renderCard = (card,index) => {
     return (
-      <Card style={{ width: "20%" }} key={index} className="mx-2">
-      <Card.Img variant="top" src="holder.js/100px180" src={card.image} />
-      <Card.Body>
-        <Card.Title style={{height:"50%"}}>{card.title}</Card.Title>
-        <Button size="sm" variant="dark" href="*">INFO</Button>
+      <Card style={{width:"16rem", height: "10%"}} key={index} className="m-2">
+      <Card.Img variant="top" style={{width:"100%", height: "10rem"}} src="holder.js/100px180" src={card.image} />
+      <Card.Body >
+        <Card.Title className="text-center" style={{height:"50%"}}>{card.title}</Card.Title>
+        <Button size="sm" variant="dark" href="*" style={{width:"100%"}}>INFO</Button>
       </Card.Body>
     </Card>
     )

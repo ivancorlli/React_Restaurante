@@ -3,7 +3,7 @@ import '../css/carousel.css'
 
 const Carousel = () => {
     return(
-        <div className="container-xl mb-2">
+        <div className="container-fluid mb-2">
         <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
