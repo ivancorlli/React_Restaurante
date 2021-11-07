@@ -16,7 +16,7 @@ import Promo5 from "./assets/Promo/Promo5.jpg";
 /* CSS */
 
 import "../pages/css/slider.css";
-import './PrevNext'
+/* import './PrevNext.js' */
 
 export default function CardPromo() {
 

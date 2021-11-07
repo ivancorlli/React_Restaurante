@@ -1,9 +1,10 @@
 import React, { Fragment } from "react";
 import { Grid } from "@mui/material";
 import Carousel from "../Home/Carousel";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import CardFood from "../../Card/CardFood";
 import CardPromo from "../../Card/CardPromo";
+import "../css/title.css";
 
 export default function Home() {
   return (
@@ -11,18 +12,28 @@ export default function Home() {
       <Carousel />
       <Container
         fluid
-        className="d-block p-2"
-        style={{ backgroundColor: "#E4E4E4" }}
+        className="d-none d-sm-block p-2"
+        style={{
+          background: "#FBAB7E",
+          background: "linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)",
+        }}
       >
-        <h1 className="text-center"> CATEGORÍAS </h1>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
+        <h1 className="text-center title"> CATEGORÍAS </h1>
+        <Row>
+          <Col xl={12} md={12} xs={false}>
             <CardFood />
-          </Grid>
-        </Grid>
+          </Col>
+        </Row>
       </Container>
-      <Container fluid>
-        <CardPromo/>
+      <Container
+        fluid
+        style={{
+          background: "#85FFBD",
+          background: "linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%)",
+        }}
+      >
+        <h1 className="text-center title">PROMOS!!!</h1>
+        <CardPromo />
       </Container>
     </Fragment>
   );
