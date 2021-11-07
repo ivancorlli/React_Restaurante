@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import { Link } from "react-router-dom"
 
 const Register = () => {
     const [email, setEmail] = useState('') 
@@ -30,6 +30,7 @@ const Register = () => {
                             <input onChange={(e) => setPassword(e.target.value) } className='form-control' type="password" />
                         </div>
                         <button type='submit' className='btn btn-secondary mt-2'>Registrate</button>
+                        <p>¿Ya tenes una cuenta? <Link to="/login">Logueate</Link></p>
                     </form>
                 </div>
             </div>

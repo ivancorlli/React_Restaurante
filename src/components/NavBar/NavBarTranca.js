@@ -14,7 +14,7 @@ export default function NavBar() {
     return (
       <Navbar className="navContainer" variant="dark" color="white" expand="lg">
         <Container fluid>
-          <Navbar.Brand href="/">Rolling-Menú</Navbar.Brand>
+          <NavLink className='navbar-brand' to="/">Rolling-Menú</NavLink>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
