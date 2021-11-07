@@ -5,7 +5,7 @@ let sliderSectionLast = sliderSection[sliderSection.length - 1];
 const btnLeft = document.querySelector("#btnL");
 const btnRight = document.querySelector("#btnR");
 
-slider.insertAdjacentElement('afterbegin', sliderSectionLast);
+slider?.insertAdjacentElement('afterbegin', sliderSectionLast);
 
 function next() {
     let sliderSectionFirst = document.querySelectorAll(".sliderSection")[0];
@@ -30,10 +30,10 @@ function prev() {
   }, 500);
 }
 
-btnRight.addEventListener('click',function () {
+btnRight?.addEventListener('click',function () {
     next();
 });
 
-btnLeft.addEventListener('click',function () {
+btnLeft?.addEventListener('click',function () {
     prev();
 });

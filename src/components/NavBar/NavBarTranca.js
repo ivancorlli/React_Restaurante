@@ -4,10 +4,9 @@ import {
   Container,
   Nav,
   Form,
-  FormControl,
-  Button,
+  FormControl 
 } from "react-bootstrap";
-
+import {NavLink} from 'react-router-dom'
 import "./NavBar.css";
 
 export default function NavBar() {
@@ -23,8 +22,8 @@ export default function NavBar() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="/about">About</Nav.Link>
-              <Nav.Link href="/contact">Contact</Nav.Link>
+              <NavLink className='nav-link' to="/about">About</NavLink>
+              <NavLink className='nav-link' to="/contact">Contact</NavLink>
             </Nav>
             <Container className="w-100">
               <Form className="d-flex">
@@ -38,13 +37,13 @@ export default function NavBar() {
             </Container>
             <Container className="d-flex justify-content-end m-2">
               {isLogged ? (
-                <Button variant="outline-light" className="mx-2" href="/home">
+                <NavLink className="nav-link btn btn-outline-light " to="/home">
                   Log out
-                </Button>
+                </NavLink>
               ) : (
-                <Button variant="outline-light" className="mx-2" href="/login">
+                <NavLink className="nav-link btn btn-outline-light " to="/login">
                   Log in
-                </Button>
+                </NavLink>
               )}
             </Container>
           </Navbar.Collapse>
