@@ -13,7 +13,7 @@ const AppRouter = () => {
                 <Route exact path='/register' component={Register}  />
                 <Route exact path='/'  />
                 <Route exact path='*'  />
-            </Switch>1
+            </Switch>
         </Router>
     )
 }
