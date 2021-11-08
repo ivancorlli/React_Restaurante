@@ -30,7 +30,7 @@ export default function NavBar() {
               <Form className="d-flex">
                 <FormControl
                   type="search"
-                  placeholder="Search"
+                  placeholder="Buscar"
                   className="me-2"
                   aria-label="Search"
                 />
