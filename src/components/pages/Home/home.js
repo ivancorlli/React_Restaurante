@@ -6,6 +6,7 @@ import CardPromo from "../../Card/CardPromo";
 import Comments from "./comments";
 import "../css/title.css";
 
+
 export default function Home() {
   return (
     <Fragment>
@@ -44,7 +45,7 @@ export default function Home() {
           background: "linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)",
         }}
       >
-        <h1 className="text-center title">TESTIMONIOS</h1>
+        <h1 className="text-center title">COMENTARIOS</h1>
         <Comments />
       </Container>
     </Fragment>

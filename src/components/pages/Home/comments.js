@@ -1,6 +1,8 @@
 import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 
+import '../css/comments.css'
+
 export default function Comments() {
   const cardInfo = [
     {
@@ -64,12 +66,12 @@ export default function Comments() {
 
   const renderCard = (card, index) => {
     return (
-      <Card key={index} className="my-2">
+      <Card key={index} className="my-2 cardBG">
         <Card.Img
           variant="top"
           src="holder.js/100px160"
           src={card.image}
-          style={{ maxWidth: "80px" }}
+          style={{ maxWidth: "80px",borderRadius: "50%", margin: "5px"}}
         />
         <Card.Body>
           <Card.Title>{card.title}</Card.Title>
