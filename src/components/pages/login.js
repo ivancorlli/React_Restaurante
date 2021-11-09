@@ -19,6 +19,7 @@ export default function Login() {
         backgroundRepeat: "no-repeat",
         backgroundposition: "center",
         backgroundSize: "cover",
+        maxHeight: "650px"
       }}
     >
       <Container className="pageFormat">

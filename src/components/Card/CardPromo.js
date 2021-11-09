@@ -2,8 +2,6 @@
 
 import React, { Fragment } from "react";
 import { Container } from "react-bootstrap";
-import Icon from "@mui/material/Icon";
-import { green } from "@mui/material/colors";
 
 /* Import de las imagenes en el slider */
 
@@ -16,7 +14,7 @@ import Promo5 from "./assets/Promo/Promo5.jpg";
 /* CSS */
 
 import "../pages/css/slider.css";
-/*  import './PrevNext.js'  */
+/*   import './PrevNext.js'   */
 
 export default function CardPromo() {
 
