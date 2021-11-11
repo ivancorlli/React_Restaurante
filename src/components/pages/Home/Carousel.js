@@ -3,16 +3,16 @@ import '../css/carousel.css'
 
 const Carousel = () => {
     return(
-        <div className="container-xl mb-2">
+        <div className="contanier-fluid container-xl mb-2">
         <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img src="./media/img/tacos.jpg" className="d-block w-100" alt="..."/>
           </div>
-          <div class="carousel-item">
+          <div className="carousel-item">
             <img src="./media/img/pizza.jpg" className="d-block w-100" alt="..."/>
           </div>
-          <div class="carousel-item">
+          <div className="carousel-item">
             <img src="./media/img/hambur.jpg" className="d-block w-100" alt="..."/>
           </div>
         </div>
