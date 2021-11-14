@@ -3,7 +3,7 @@ import '../css/carousel.css'
 
 const Carousel = () => {
     return(
-        <div className="container-fluid" style={{background: "#000000"}}>
+        <div style={{background: "#000000"}}>
         <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">

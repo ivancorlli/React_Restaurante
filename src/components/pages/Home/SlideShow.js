@@ -1,11 +1,13 @@
 import React, { useRef } from "react";
 
-import img1 from "../assets/slideshow/pizza.jpg";
-import img2 from "../assets/slideshow/pasta.jpg";
-import img3 from "../assets/slideshow/aceite.jpg";
-import img4 from "../assets/slideshow/berries.jpg";
-import { ReactComponent as ArrowL } from "../assets/slideshow/left.svg";
-import { ReactComponent as ArrowR } from "../assets/slideshow/right.svg";
+import img1 from "../../Card/assets/CardCategories/Cafe.jpg";
+import img2 from "../../Card/assets/CardCategories/Hambur.jpg";
+import img3 from "../../Card/assets/CardCategories/Parrilla.jpg";
+import img4 from "../../Card/assets/CardCategories/Pizza.jpg";
+import img5 from "../../Card/assets/CardCategories/Pasta.jpg";
+import img6 from "../../Card/assets/CardCategories/Postre.jpg";
+import { ReactComponent as ArrowL } from "../../Card/assets/CardCategories/Left.svg";
+import { ReactComponent as ArrowR } from "../../Card/assets/CardCategories/Right.svg";
 
 import styled from "styled-components";
 
@@ -63,7 +65,7 @@ const SlideShow = () => {
             <img src={img1} alt="" />
           </a>
           <TextoSlide>
-            <p>Esto es de 15% de descuento</p>
+            <p>Cafetería</p>
           </TextoSlide>
         </Slide>
         <Slide>
@@ -85,6 +87,22 @@ const SlideShow = () => {
         <Slide>
           <a href="#">
             <img src={img4} alt="" />
+          </a>
+          <TextoSlide>
+            <p>Esto es de 15% de descuento</p>
+          </TextoSlide>
+        </Slide>
+        <Slide>
+          <a href="#">
+            <img src={img5} alt="" />
+          </a>
+          <TextoSlide>
+            <p>Esto es de 15% de descuento</p>
+          </TextoSlide>
+        </Slide>
+        <Slide>
+          <a href="#">
+            <img src={img6} alt="" />
           </a>
           <TextoSlide>
             <p>Esto es de 15% de descuento</p>
@@ -113,14 +131,15 @@ const ContenedorSlideShow = styled.div`
 `;
 
 const Slide = styled.div`
-  min-width: 100%;
+  min-width: 50%;
   overflow: hidden;
   transition: 0.3s ease all;
   z-index: 9;
-  max-height: 500px;
+  max-height: 300px;
   position: relative;
 
   img {
+    margin-left: 10px;
     width: 100%;
     vertical-align: top;
   }
