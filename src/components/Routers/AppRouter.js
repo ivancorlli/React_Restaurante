@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
 import Login from '../pages/login'
 import Home from '../pages/Home/home'
+import Error404 from '../pages/Home/Error404'
 
 export default function AppRouter() {
   return (
@@ -20,7 +21,7 @@ export default function AppRouter() {
           <Login/>
         </Route>
         <Route exact path="*">
-          <h1 className="text-center">ERROR 404</h1>
+          <Error404/>
         </Route>
       </Switch>
     </Router>
