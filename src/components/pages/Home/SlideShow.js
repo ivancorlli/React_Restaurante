@@ -61,7 +61,7 @@ const SlideShow = () => {
     <ContenedorPrincipal>
       <ContenedorSlideShow ref={Slideshow}>
         <Slide>
-          <a href="#">
+          <a href="*">
             <img src={img1} alt="" />
           </a>
           <TextoSlide>
@@ -69,43 +69,43 @@ const SlideShow = () => {
           </TextoSlide>
         </Slide>
         <Slide>
-          <a href="#">
+          <a href="*">
             <img src={img2} alt="" />
           </a>
           <TextoSlide>
-            <p>Esto es de 15% de descuento</p>
+            <p>Hamburguesas</p>
           </TextoSlide>
         </Slide>
         <Slide>
-          <a href="#">
+          <a href="*">
             <img src={img3} alt="" />
           </a>
           <TextoSlide>
-            <p>Esto es de 15% de descuento</p>
+            <p>Parrillada</p>
           </TextoSlide>
         </Slide>
         <Slide>
-          <a href="#">
+          <a href="*">
             <img src={img4} alt="" />
           </a>
           <TextoSlide>
-            <p>Esto es de 15% de descuento</p>
+            <p>Pizzas</p>
           </TextoSlide>
         </Slide>
         <Slide>
-          <a href="#">
+          <a href="*">
             <img src={img5} alt="" />
           </a>
           <TextoSlide>
-            <p>Esto es de 15% de descuento</p>
+            <p>Minutas</p>
           </TextoSlide>
         </Slide>
         <Slide>
-          <a href="#">
+          <a href="*">
             <img src={img6} alt="" />
           </a>
           <TextoSlide>
-            <p>Esto es de 15% de descuento</p>
+            <p>Postres</p>
           </TextoSlide>
         </Slide>
       </ContenedorSlideShow>
@@ -153,6 +153,7 @@ const TextoSlide = styled.div`
   text-align: center;
   position: absolute;
   bottom: 0;
+  margin-left: 10px;
 
   @media screen and (max-width: 700px) {
     position: relative;
