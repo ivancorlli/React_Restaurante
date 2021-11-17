@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 import { UserContext } from '../contexts/UserProvider'
 
-const useUserContext = () => {
+const useUser = () => {
     return useContext(UserContext)
 }
 
-export default useUserContext
+export default useUser
