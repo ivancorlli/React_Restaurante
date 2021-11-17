@@ -3,11 +3,6 @@ import React from "react";
 import "../css/carousel.css";
 
 const Carousel = () => {
-<<<<<<< HEAD
-    return(
-        <div className="contanier-fluid container-xl mb-2">
-        <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-=======
   return (
     <div style={{ background: "#2a2a2a" }} className="pb-5">
       <div class="logoCSS">
@@ -42,7 +37,6 @@ const Carousel = () => {
       </div>
 
       {/* <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
->>>>>>> 2ef483ab92cda77477b8be31f2d3ca5a2b78dc72
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img src="./media/img/Carousel/Comida1.jpg" className="d-block w-100" alt="..."/>
