@@ -4,14 +4,14 @@ import "../css/carousel.css";
 
 const Carousel = () => {
   return (
-    <div style={{ background: "#000000" }}>
+    <div style={{ background: "#2a2a2a" }} className="pb-5">
       <div class="logoCSS">
-        <h1>
+        <h1 className="text-light">
           <i class="bi bi-egg-fried"></i> Rolling-Menú{" "}
           <i class="bi bi-egg-fried"></i>
         </h1>
       </div>
-      <div className="d-flex justify-content-evenly py-2 contentInfo">
+      <div className="d-flex justify-content-evenly py-2 contentInfo text-light">
         <div className="d-flex flex-column justify-content-between logoName">
           <i class="bi bi-clock-history text-center fs-1"></i>
           <h3 className="text-center">AHORRÁ TIEMPO</h3>

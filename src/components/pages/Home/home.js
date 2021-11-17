@@ -1,11 +1,10 @@
 import React, { Fragment } from "react";
 import Carousel from "../Home/Carousel";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import CardPromo from "../../Card/CardPromo";
 import Comments from "./comments";
 import "../css/title.css";
 import SlideShow from "./SlideShow";
-
 
 export default function Home() {
   return (
