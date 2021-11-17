@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
-import Login from '../pages/login'
+import Login from '../pages/Login'
 import Home from '../pages/Home/home'
 import Error404 from '../pages/Home/Error404'
 import Contact from '../Contact/Contact'
