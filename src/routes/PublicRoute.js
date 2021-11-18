@@ -1,24 +1,15 @@
 import React from 'react'
-import { Redirect, Route} from 'react-router'
+import { Navigate } from 'react-router-dom'
 import useUser from '../hooks/useUser'
 
-export const PublicRoute = ({component: Component, ...rest}) => {
+export const PublicRoute = ({children}) => {
 
     const {userSession} = useUser()
-    return (
-        <>
-        <Route {...rest}/>
-           {!userSession
-               ?
-               (<Component/>)
+    return  !userSession
+                ?
+             children
                 :
-            (
-            <Redirect to='/'/>
-            )
-
-           }
-        </> 
-    )
-}
+            <Navigate  to='/'/>
+    }
 
 export default PublicRoute

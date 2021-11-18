@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch , Route } from "react-router-dom";
+import { BrowserRouter, Routes  , Route } from "react-router-dom";
 import Admin from "../components/pages/Admin/Admin";
 import Login from "../components/pages/Login";
 import Register from "../components/pages/Register";
@@ -10,15 +10,27 @@ import PublicRoute from "./PublicRoute";
 
 const AppRouter = () => {
     return (
-        <Router>
-            <Switch>
-                <AdminRoute path='/admin' component={Admin}  />
-                <PublicRoute exact path='/login' component={Login}  />
-                <PublicRoute exact path='/register' component={Register}  />
+        <BrowserRouter>
+            <Routes >
+                <Route path='/admin' element={
+                    <AdminRoute>
+                        <Admin/>
+                    </AdminRoute>
+                }/>
+                <Route path='/login' element={
+                    <PublicRoute>
+                        <Login/>
+                    </PublicRoute>
+                }/>
+                <Route path='/register' element={
+                    <PublicRoute>
+                        <Register/>
+                    </PublicRoute>
+                }/>
                 <Route exact path='/'  />
                 <Route exact path='*'  />
-            </Switch>
-        </Router>
+            </Routes >
+        </BrowserRouter>
     )
 }
 

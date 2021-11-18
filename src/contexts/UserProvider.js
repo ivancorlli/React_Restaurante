@@ -22,7 +22,8 @@ const UserProvider = ({children}) => {
                 msg: response.msg,
             }
             if(response.ok){
-                let {payload} = response
+                let {payload} = response;
+                console.log(payload)
                 let data = {
                     role:payload.role,
                     active:payload.active,

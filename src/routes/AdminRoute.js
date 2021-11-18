@@ -1,21 +1,16 @@
-import { Redirect, Route} from 'react-router'
+import { Navigate } from 'react-router-dom'
 import useUser from '../hooks/useUser'
 
-export const AdminRoute = ({component: Component, ...rest}) => {
+export const AdminRoute = ({children}) => {
 
     const {userSession} = useUser()
-    return (
-        <>
-        <Route {...rest}/>
-           {userSession && userSession.role === 'ADMIN'
+    return userSession && userSession.role === 'ADMIN'
                ?
-            (<Component/>)
+            children
                 :
-            (<Redirect to='/'/>)
+            <Navigate  to='/'/>
 
-           }
-        </> 
-    )
+           
 }
 
 export default AdminRoute
