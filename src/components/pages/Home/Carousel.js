@@ -41,19 +41,11 @@ const Carousel = () => {
           <div className="carousel-item active">
             <img src="./media/img/Carousel/Comida1.jpg" className="d-block w-100" alt="..."/>
           </div>
-<<<<<<< HEAD
-          <div className="carousel-item">
-            <img src="./media/img/pizza.jpg" className="d-block w-100" alt="..."/>
-          </div>
-          <div className="carousel-item">
-            <img src="./media/img/hambur.jpg" className="d-block w-100" alt="..."/>
-=======
           <div class="carousel-item">
             <img src="./media/img/Carousel/Comida2.jpg" className="d-block w-100" alt="..."/>
           </div>
           <div class="carousel-item">
             <img src="./media/img/Carousel/Comida3.jpg" className="d-block w-100" alt="..."/>
->>>>>>> 2ef483ab92cda77477b8be31f2d3ca5a2b78dc72
           </div>
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

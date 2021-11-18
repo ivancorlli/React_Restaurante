@@ -10,8 +10,9 @@ import './components/pages/css/app.css'
 function App() {
   return (
     <div>
+      <AppRouter>
       <NavBarTranca/>
-      <AppRouter></AppRouter>
+      </AppRouter>
       {/* <Footer/> */}
     </div>
   )
