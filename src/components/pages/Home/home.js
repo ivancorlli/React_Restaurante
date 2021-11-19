@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import Carousel from "../Home/Carousel";
+import Carousel from "./Carousel";
 import { Container } from "react-bootstrap";
 import CardPromo from "../../Card/CardPromo";
 import Comments from "./comments";

@@ -24,7 +24,7 @@ const UserItem = ({user}) => {
           </td>
           <td>
               <div className='d-flex'>
-            <button type="button" className="btn">
+            <button type="button" className="btn" data-toggle="modal" data-target="#UserEdit">
               <FontAwesomeIcon className="text-info"  icon={faUserEdit} />
             </button>
             <button type="button" className="btn">
@@ -33,6 +33,7 @@ const UserItem = ({user}) => {
               </div>
           </td>
         </tr>
+        
       </>
     );
 }

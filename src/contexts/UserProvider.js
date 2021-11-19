@@ -23,11 +23,10 @@ const UserProvider = ({children}) => {
             }
             if(response.ok){
                 let {payload} = response;
-                console.log(payload)
                 let data = {
                     role:payload.role,
                     active:payload.active,
-                    expiresIn : Date.now() + 1500 * 1000,
+                    expiresIn : Date.now() + 1000 * 1000,
                 }
                 setUserSession(data);
                 setLoginInfo(info)
@@ -46,16 +45,17 @@ const UserProvider = ({children}) => {
         localStorage.removeItem('userSession')
     }
 
-    function logoutTimer (){
-        let userSession = JSON.parse(localStorage.getItem('userSession'));
-        if(userSession && (userSession.expiresIn === Date.now() || userSession.expiresIn < Date.now() )){
-            logout()
-            console.log('cerrada la Session por timer')
-        }
-    }
-
     useEffect(()=>{
-        logoutTimer()
+        function logoutTimer (){
+            let userSession = JSON.parse(localStorage.getItem('userSession'));
+            if(userSession && (userSession.expiresIn === Date.now() || userSession.expiresIn < Date.now() )){
+                logout()
+            }
+        };
+        logoutTimer();
+        return ()=>{
+            console.log('cerrado por timer')
+        }
     },[])
 
     return (

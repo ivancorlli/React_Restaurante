@@ -6,12 +6,20 @@ import {
   Form,
   FormControl,
   Button,
+  DropdownButton,
+  Dropdown,
 } from "react-bootstrap";
+import useUser from "../../hooks/useUser";
 
 import "./NavBar.css";
 
-export default function NavBar() {
-    let isLogged = false;
+export default function NavBarTranca() {
+
+  const {userSession, logout} = useUser();
+
+  function handleClick(){
+    logout();
+  }
     return (
       <Navbar className="navContainer" variant="dark" color="white" expand="lg">
         <Container fluid>
@@ -33,12 +41,20 @@ export default function NavBar() {
                   placeholder="Buscar"
                   className="me-2"
                   aria-label="Search"
-                />
+                  />
               </Form>
             </Container>
+              {
+               userSession && userSession.role === 'ADMIN' &&(
+                  <DropdownButton id="dropdown-basic-button" title="Admin">
+                    <Dropdown.Item href="/admin/menus">Menus</Dropdown.Item>
+                    <Dropdown.Item href="/admin/usuarios">Usuarios</Dropdown.Item>
+                  </DropdownButton>
+                )
+              }
             <Container className="d-flex justify-content-end m-2">
-              {isLogged ? (
-                <Button variant="outline-light" className="mx-2" href="/home">
+              {userSession ? (
+                <Button onClick={handleClick} variant="outline-light" className="mx-2" href="/">
                   Log out
                 </Button>
               ) : (

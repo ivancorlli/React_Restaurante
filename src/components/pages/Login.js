@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import useUser from "../../hooks/useUser"
 
 
@@ -11,16 +11,20 @@ const initialUser = {
 const Login = () => {
   const [email, setEmail] = useState('') 
   const [password, setPassword] = useState('')
-  const {login, userSession,loginInfo} = useUser() 
+  const {login,loginInfo} = useUser() 
 
   const handleSubmit = async (e) => {
     e.preventDefault()
       await login(email,password)
       setEmail(initialUser.email)
       setPassword(initialUser.password)
-      if(!userSession) return
-
   }
+
+  
+  useEffect(() => {
+    return () => {
+    }
+}, [handleSubmit])
 
 
   return (
@@ -30,11 +34,11 @@ const Login = () => {
           <form onSubmit={handleSubmit} className='card p-3'>
             <div className='form-group'>
               <label>Email</label>
-              <input onChange={(e) => setEmail(e.target.value) } className='form-control' type="email" />
+              <input onChange={(e) => setEmail(e.target.value) } value={email} className='form-control' type="email" />
             </div>
             <div className='form-group'>
               <label>Contraseña</label>
-              <input onChange={(e) => setPassword(e.target.value) } className='form-control' type="password" />
+              <input onChange={(e) => setPassword(e.target.value) } value={password} className='form-control' type="password" />
             </div>
             <button type='submit' className='btn btn-secondary mt-2'>Iniciar sesión </button>
           </form>

@@ -13,7 +13,8 @@ function App() {
       <>
         <UserProvider>
         <NavBarTranca/>
-        <AppRouter/>
+        <AppRouter>
+        </AppRouter>
         </UserProvider>
       </>
   )

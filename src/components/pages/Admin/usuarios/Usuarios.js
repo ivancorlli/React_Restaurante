@@ -7,17 +7,34 @@ import UserItem from "./UserItem"
 const Usuarios = () => {
     const [users, setUsers] = useState([])
     const [info, setInfo] = useState(null)
+    const [search, setSearch] = useState('')
+    const [userSearch, setUserSearch] = useState([])
+
+    function handleSearch (e){
+        setSearch(e.target.value);
+        if(users && search.length >= 3){
+           let user = users.filter(el=> el.name==search)
+           if(user.length > 1){
+               setUserSearch(user)
+            }else{
+            setUserSearch([])
+            }
+        }
+    }
+
+
+
     async function fetchData(){
-        try{
-            let {data} = await  getUsers();
-            if(data.ok){
+            let response = await  getUsers();
+            let {data} = response;
+            if(data && data.ok){
                 setUsers(data.users)
             }else{
-                console.log(false)
+                setInfo({
+                    ok:response.ok,
+                    msg: response.msg
+                })
             }
-        }catch(err){
-            return err
-        }
         }
         useEffect(() => {
             fetchData()
@@ -28,7 +45,7 @@ const Usuarios = () => {
             <div className='container  my-3'>
                 <div className='row my-1 p-sm-3'>
                 <form className="d-flex  justify-content-center">
-                <input className="form-control m-1 w-50" type="search" placeholder="Buscar Usuario" aria-label="Search"/>
+                <input className="form-control m-1 w-50" name='search' type="search" onChange={handleSearch} placeholder="Buscar Usuario" aria-label="Search"/>
                 <div className=" ms-4 d-flex">
                 <button className="btn btn-outline-dark m-1" type="submit">Buscar</button>
                 </div>
@@ -50,13 +67,21 @@ const Usuarios = () => {
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {
-                                    users
-                                    ?
-                                    users.map(user=><UserItem user={user} key={user._id}/>)
-                                    :
-                                    <tr></tr>
-                                }
+                                    {
+                                        info
+                                        ?
+                                        <h2>{info.msg}</h2>
+                                        :
+                                            userSearch.length > 1
+                                            ?
+                                            userSearch.map(user=><UserItem user={user} key={user._id}/>)
+                                            :
+                                                users
+                                                ?
+                                                users.map(user=><UserItem user={user} key={user._id}/>)
+                                                :
+                                                <tr></tr>
+                                    }
                                 </tbody>
                             </table>
                             </div>
