@@ -12,35 +12,35 @@ export default function Home() {
       <Carousel />
       <Container
         fluid
-        className=" p-2  border-top border-2"
+        className=" p-2 py-5  border-top border-2"
         style={{
           background: "#FBAB7E",
           background: "linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)",
         }}
       >
-        <h1 className="text-center title" > CATEGORÍAS </h1>
+        <h1 className="text-center title mb-5" > CATEGORÍAS </h1>
         <SlideShow/>
       </Container>
       <Container
         fluid
-        className=" border-top border-2"
+        className=" border-top border-2 py-5"
         style={{
           background: "#85FFBD",
           background: "linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%)",
         }}
       >
-        <h1 className="text-center title">PROMOCIONES</h1>
+        <h1 className="text-center title mb-5">PROMOCIONES</h1>
         <CardPromo />
       </Container>
       <Container
         fluid
-        className=" border-top border-2"
+        className=" border-top border-2 py-5"
         style={{
           background: "#FBAB7E",
           background: "linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)",
         }}
       >
-        <h1 className="text-center title">COMENTARIOS</h1>
+        <h1 className="text-center title mb-5">COMENTARIOS</h1>
         <Comments />
       </Container>
     </Fragment>

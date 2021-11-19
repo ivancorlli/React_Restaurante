@@ -97,7 +97,7 @@ const SlideShow = () => {
             <img src={img5} alt="" />
           </a>
           <TextoSlide>
-            <p>Minutas</p>
+            <p>Pastas</p>
           </TextoSlide>
         </Slide>
         <Slide>

@@ -3,9 +3,10 @@ import AppRouter from "./routes/AppRouter";
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBarTranca from './components/NavBar/NavBarTranca'
-// import Footer from './components/Footer/Footer';
+import Footer from './components/Footer/Footer.js';
 
 import './components/pages/css/app.css'
+
 
 
 function App() {
@@ -13,8 +14,9 @@ function App() {
       <>
         <UserProvider>
         <NavBarTranca/>
-        <AppRouter>
-        </AppRouter>
+          <AppRouter>
+          </AppRouter>
+        <Footer/>
         </UserProvider>
       </>
   )

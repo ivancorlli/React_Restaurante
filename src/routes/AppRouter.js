@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes  , Route } from "react-router-dom";
+import Contact from "../components/Contact/Contact";
+import About from "../components/pages/about";
 import Menus from "../components/pages/Admin/menus/Menus";
 import Usuarios from "../components/pages/Admin/usuarios/Usuarios";
 import Error404 from "../components/pages/Home/Error404";
@@ -35,6 +37,8 @@ const AppRouter = () => {
                         <Register/>
                     </PublicRoute>
                 }/>
+                <Route exact path='/contact' element={<Contact/>} />
+                <Route exact path='/about' element={<About/>} />
                 <Route exact path='/' element={<Home/>} />
                 <Route exact path='*' element={<Error404/>} />
             </Routes >
