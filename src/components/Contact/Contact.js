@@ -26,8 +26,8 @@ const Contact = () => {
               longitud={ubiLng1}
             />
             <div className="d-flex justify-content-between">
-              <i class="bi bi-geo-alt-fill fs-5 mx-2"> Av. Belgrano 1253</i>
-              <i class="bi bi-whatsapp fs-5 mx-2"> 38141522115</i>
+              <i class="bi bi-geo-alt-fill fs-5 mx-2 text-light"> Av. Belgrano 1253</i>
+              <i class="bi bi-whatsapp fs-5 mx-2 text-light"> 38141522115</i>
             </div>
           </div>
         </Col>
@@ -42,22 +42,22 @@ const Contact = () => {
               longitud={ubiLng2}
             />
             <div className="d-flex justify-content-between">
-              <i class="bi bi-geo-alt-fill fs-5 mx-2"> Av. Mitre y San Juan</i>
-              <i class="bi bi-whatsapp fs-5 mx-2"> 3814215415</i>
+              <i class="bi bi-geo-alt-fill fs-5 mx-2 text-light"> Av. Mitre y San Juan</i>
+              <i class="bi bi-whatsapp fs-5 mx-2 text-light"> 3814215415</i>
             </div>
           </div>
         </Col>
       </Row>
       <Row className="mt-5 mx-2">
         <Col className="saberMas py-3">
-          <h3 className="text-center">¿Quieres saber más? ¡Trabajemos Juntos!</h3>
-          <p>
+          <h3 className="text-center text-light">¿Quieres saber más? ¡Trabajemos Juntos!</h3>
+          <p className="text-light">
             Si deseas consultar mayor información sobre nuestros servicios o
             tienes alguna duda al respecto, no dudes en solicitar una
             consultoría gratuita y uno de nuestros asesores te contactará a la
             brevedad.
           </p>
-          <a href="https://mail.google.com" target="_blank"><i class="bi bi-envelope fs-5"> contact-rrhh@rolling-menu.com</i></a>
+          <a style={{textDecoration: "none"}} href="https://mail.google.com" target="_blank"><i class="bi bi-envelope fs-5 text-light"> contact-rrhh@rolling-menu.com</i></a>
         </Col>
       </Row>
       <Email/>
