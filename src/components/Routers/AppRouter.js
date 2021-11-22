@@ -5,6 +5,7 @@ import Home from '../pages/Home/home'
 import Error404 from '../pages/Home/Error404'
 import Contact from '../Contact/Contact'
 import About from '../About/About'
+import Menu from '../pages/Users/Usuario'
 
 export default function AppRouter() {
   return (
@@ -22,8 +23,11 @@ export default function AppRouter() {
         <Route exact path="/login">
           <Login/>
         </Route>
-        <Route exact path="*">
+        <Route exact path="/error">
           <Error404/>
+        </Route>
+        <Route exact path="/usuario/menu">
+          <Menu/>
         </Route>
       </Switch>
     </Router>
