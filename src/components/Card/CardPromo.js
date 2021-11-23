@@ -51,7 +51,7 @@ const renderCard = (card, index) => {
     <Card.ImgOverlay>
       <Container className="d-flex justify-content-between">
       <h5>{card.title}</h5>
-      <a href="*"><i class="bi bi-tags fs-3"></i></a>
+      <a href="/error"><i class="bi bi-tags fs-3"></i></a>
       </Container>
     </Card.ImgOverlay>
   </Card>

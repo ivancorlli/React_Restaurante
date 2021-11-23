@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-
 import img1 from "../../Card/assets/CardCategories/Cafe.jpg";
 import img2 from "../../Card/assets/CardCategories/Hambur.jpg";
 import img3 from "../../Card/assets/CardCategories/Parrilla.jpg";
@@ -61,7 +60,7 @@ const SlideShow = () => {
     <ContenedorPrincipal>
       <ContenedorSlideShow ref={Slideshow}>
         <Slide>
-          <a href="*">
+          <a href="/usuario/menu">
             <img src={img1} alt="" />
           </a>
           <TextoSlide>
@@ -69,7 +68,7 @@ const SlideShow = () => {
           </TextoSlide>
         </Slide>
         <Slide>
-          <a href="*">
+          <a href="/usuario/menu">
             <img src={img2} alt="" />
           </a>
           <TextoSlide>
@@ -77,7 +76,7 @@ const SlideShow = () => {
           </TextoSlide>
         </Slide>
         <Slide>
-          <a href="*">
+          <a href="/usuario/menu">
             <img src={img3} alt="" />
           </a>
           <TextoSlide>
@@ -85,7 +84,7 @@ const SlideShow = () => {
           </TextoSlide>
         </Slide>
         <Slide>
-          <a href="*">
+          <a href="/usuario/menu">
             <img src={img4} alt="" />
           </a>
           <TextoSlide>
@@ -93,7 +92,7 @@ const SlideShow = () => {
           </TextoSlide>
         </Slide>
         <Slide>
-          <a href="*">
+          <a href="/usuario/menu">
             <img src={img5} alt="" />
           </a>
           <TextoSlide>
@@ -101,7 +100,7 @@ const SlideShow = () => {
           </TextoSlide>
         </Slide>
         <Slide>
-          <a href="*">
+          <a href="/usuario/menu">
             <img src={img6} alt="" />
           </a>
           <TextoSlide>

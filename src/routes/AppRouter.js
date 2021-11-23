@@ -1,14 +1,15 @@
 import { BrowserRouter, Routes  , Route } from "react-router-dom";
 import Contact from "../components/Contact/Contact";
-import About from "../components/pages/about";
+import About from "../components/About/About";
 import Menus from "../components/pages/Admin/menus/Menus";
 import Usuarios from "../components/pages/Admin/usuarios/Usuarios";
 import Error404 from "../components/pages/Home/Error404";
-import Home from "../components/pages/Home/Home";
+import Home from "../components/pages/Home/home";
 import Login from "../components/pages/Login";
 import Register from "../components/pages/Register";
 import AdminRoute from "./AdminRoute";
 import PublicRoute from "./PublicRoute";
+import UsuarioMenu from '../components/pages/Users/Usuario'
 
 
 
@@ -41,6 +42,8 @@ const AppRouter = () => {
                 <Route exact path='/about' element={<About/>} />
                 <Route exact path='/' element={<Home/>} />
                 <Route exact path='*' element={<Error404/>} />
+                <Route exact path='usuario/menu' element={<UsuarioMenu/>} />
+                
             </Routes >
         </BrowserRouter>
     )

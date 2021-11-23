@@ -8,8 +8,8 @@ const Map = (props) => {
 
     return (
         <GoogleMap 
-        defaultZoom={10}
-        defaultCenter={{lat: {ubiLat}, lng: {ubiLng}}}  />
+        defaultZoom={17}
+        defaultCenter={{lat: ubiLat, lng: ubiLng}}  />
     );
 };
 

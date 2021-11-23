@@ -4,7 +4,7 @@
 }
 
 .saberMas{
-    border: 1px solid black;
+    border: 1px solid rgb(78, 78, 78);
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    box-shadow: rgba(189, 189, 189, 0.25) 0px 14px 28px, rgba(104, 104, 104, 0.22) 0px 10px 10px;
 }
