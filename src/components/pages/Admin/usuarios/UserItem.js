@@ -1,8 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faUserEdit} from '@fortawesome/free-solid-svg-icons'
-import {faUserTimes} from '@fortawesome/free-solid-svg-icons'
-import {faCheckCircle} from '@fortawesome/free-solid-svg-icons'
-import {faTimesCircle} from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -14,26 +9,14 @@ const UserItem = ({user}) => {
           <td>{user.surname}</td>
           <td>{user.email}</td>
           <td>{user.role}</td>
-          <td>{
-          user.active
-          ? 
-            <FontAwesomeIcon className="text-success"  icon={faCheckCircle} />
-            : 
-            <FontAwesomeIcon  icon={faTimesCircle} />
-            }
-          </td>
+          <td>{user.status}</td>
           <td>
-              <div className='d-flex'>
-            <button type="button" className="btn" data-toggle="modal" data-target="#UserEdit">
-              <FontAwesomeIcon className="text-info"  icon={faUserEdit} />
-            </button>
-            <button type="button" className="btn">
-              <FontAwesomeIcon className="text-danger"  icon={faUserTimes} />
-            </button>
+              <div>
+            <button type="button" className="btn btn-info mx-2  px-3"></button>
+            <button type="button" className="btn btn-danger mx-2  px-3"></button>
               </div>
           </td>
         </tr>
-        
       </>
     );
 }

@@ -1,0 +1,17 @@
+*{
+    margin: 0%;
+}
+
+.nav-sidebar{
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    border: 2px solid  black;
+    width: 15%;
+    height: 100vh;
+
+}
+
+.nav-sidebar--item{
+    padding: 1rem 0rem;
+}
