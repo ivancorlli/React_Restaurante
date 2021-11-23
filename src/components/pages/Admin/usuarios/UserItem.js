@@ -1,12 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faUserEdit} from '@fortawesome/free-solid-svg-icons'
 import {faUserTimes} from '@fortawesome/free-solid-svg-icons'
 import {faCheckCircle} from '@fortawesome/free-solid-svg-icons'
 import {faTimesCircle} from '@fortawesome/free-solid-svg-icons'
 
 
 
-const UserItem = ({user}) => {
+const UserItem = ({user, deleteUser}) => {
     return (
       <>
         <tr className="text-center">
@@ -23,14 +22,15 @@ const UserItem = ({user}) => {
             }
           </td>
           <td>
-              <div className='d-flex'>
-            <button type="button" className="btn" data-toggle="modal" data-target="#UserEdit">
-              <FontAwesomeIcon className="text-info"  icon={faUserEdit} />
-            </button>
-            <button type="button" className="btn">
+            {
+              user.role === 'ADMIN'
+              ?
+              <span></span>
+              :
+              <button type="button" className="btn" onClick={()=>deleteUser(user._id)}>
               <FontAwesomeIcon className="text-danger"  icon={faUserTimes} />
-            </button>
-              </div>
+              </button>
+            }
           </td>
         </tr>
         
