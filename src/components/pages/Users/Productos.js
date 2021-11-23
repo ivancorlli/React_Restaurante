@@ -13,10 +13,10 @@ const Productos = (props) => {
 
   return (
     <Container>
-      <Row xs={1} md={3} className="g-4 pb-3 border-bottom mb-5">
+      <Row xs={1} md={2} className="g-4 pb-3 border-bottom mb-5">
       {
       menus?
-      menus.map(el=> <Menues menu={el} />)  
+      menus.map(el=> <Menues menu={el} key={el._id} />)  
       :<div></div>
       }
       </Row>

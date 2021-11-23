@@ -10,9 +10,10 @@ import '../css/catalogos.css'
 import { getMenus } from "../../../helpers/getMenus";
 
 const initialCatalogo = [
-  { nombre: "desayuno" },
   { nombre: "Hamburguesas" },
-  { nombre: "Parrillada" },
+  { nombre: "Ribbs" },
+  { nombre: "Shawarma" },
+  { nombre: "Sushi" },
   { nombre: "Pizzas" },
   { nombre: "Pastas" },
   { nombre: "Postres" },
@@ -21,70 +22,70 @@ const initialCatalogo = [
 const initialProductos = [
   {
     titulo: "Café con Leche",
-    img: Cafe,
+    imagen: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
     categoria: 'Hamburguesas',
   },
   {
     titulo: "Café con Leche",
-    img: Cafe,
+    imagen: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
     categoria: 'Hamburguesas',
   },
   {
     titulo: "Café con Leche",
-    img: Cafe,
+    imagen: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
     categoria: 'Hamburguesas',
   },
   {
     titulo: "Café con Leche",
-    img: Cafe,
+    imagen: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
     categoria: 'Pizzas',
   },
   {
     titulo: "Café con Leche",
-    img: Cafe,
+    imagen: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
     categoria: 'Pizzas',
   },
   {
     titulo: "Café con Leche",
-    img: Cafe,
+    imagen: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
     categoria: 'Pizzas',
   },
   {
     titulo: "Café con Leche",
-    img: Cafe,
+    imagen: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
     categoria: 'desayuno',
   },
   {
     titulo: "Café con Leche",
-    img: Cafe,
+    imagen: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
     categoria: 'desayuno',
   },
   {
     titulo: "Café con Leche",
-    img: Cafe,
+    imagen: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
     categoria: 'hamburgesas',
   },
   {
     titulo: "Café con Leche",
-    img: Cafe,
+    imagen: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
     categoria: 'desayuno',
@@ -102,13 +103,6 @@ const Usuario = () => {
     let {data} = response;
     if(data && data.ok){
         setProductos(data.menus)
-        let cat = data.menus.map(el=> {
-          let categorias={
-            nombre:el.categoria
-          }
-          return categorias
-        });
-        setCatalogo(cat)
       }
   }
 

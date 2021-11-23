@@ -6,7 +6,7 @@ const Menues = ({menu}) => {
   return (
           <Col>
             <Card>
-              <Card.Img variant="top" src={menu.img} />
+              <Card.Img variant="top" src={menu.imagen} />
               <Card.Body>
                 <Card.Title> {menu.nombre} </Card.Title>
                 <Card.Text>{menu.descripcion}</Card.Text>

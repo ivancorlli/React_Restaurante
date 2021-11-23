@@ -6,7 +6,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Footer() {
   return (
-    <Container fluid style={{ backgroundColor: "#000000" }} className="d-block p-3">
+    <Container fluid style={{ backgroundColor: "#000000" }} className="d-block p-3 my-5">
       <div>
         <h2 className="text-center text-light p-5">
           <i class="bi bi-egg-fried"></i> Rolling-Menu <i class="bi bi-egg-fried"></i>
