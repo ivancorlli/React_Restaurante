@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { delUser } from "../../../../helpers/delUser";
 import { getUsers } from "../../../../helpers/getUsers";
 import UserItem from "./UserItem"
 
@@ -22,6 +23,9 @@ const Usuarios = () => {
         }
     }
 
+    async function deleteUser(id){
+        await delUser(id)
+    }
 
 
     async function fetchData(){
@@ -38,7 +42,7 @@ const Usuarios = () => {
         }
         useEffect(() => {
             fetchData()
-    }, [])
+    }, [deleteUser])
     
     return (
         <>
@@ -63,7 +67,7 @@ const Usuarios = () => {
                                     <th>Email</th>
                                     <th>Role</th>
                                     <th>Estado</th>
-                                    <th>Acciones</th>
+                                    <th>Borrar</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -74,11 +78,11 @@ const Usuarios = () => {
                                         :
                                             userSearch.length > 1
                                             ?
-                                            userSearch.map(user=><UserItem user={user} key={user._id}/>)
+                                            userSearch.map(user=><UserItem user={user} key={user._id} deleteUser={deleteUser}/>)
                                             :
                                                 users
                                                 ?
-                                                users.map(user=><UserItem user={user} key={user._id}/>)
+                                                users.map(user=><UserItem user={user} key={user._id} deleteUser={deleteUser}/>)
                                                 :
                                                 <tr></tr>
                                     }
