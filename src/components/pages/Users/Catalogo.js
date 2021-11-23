@@ -8,7 +8,7 @@ const Catalogo = (props) => {
   const renderCatalogo = (catalogo,index) => {
     return (
       <ListGroup.Item>
-        <a href={'#'+ catalogo.id} style={{ textDecoration: "none", color: "black" }}>
+        <a href={'#'+ catalogo.nombre} style={{ textDecoration: "none", color: "black" }}>
           {catalogo.nombre}
         </a>
       </ListGroup.Item>

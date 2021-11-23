@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 import {faEdit} from '@fortawesome/free-solid-svg-icons';
 
-const MenuItem = ({menu}) => {
+const MenuItem = ({menu, delMenu}) => {
     return (
         <>  
             <div className='col-12 col-sm-6 col-lg-4'>
@@ -18,7 +18,7 @@ const MenuItem = ({menu}) => {
                     </div>
 
                     <div className="d-flex justify-content-evenly">
-                    <button type="button" className="btn fs-4" onClick={()=>console.log(menu._id)} >
+                    <button type="button" className="btn fs-4" onClick={()=>delMenu(menu._id)} >
                         <FontAwesomeIcon className="text-danger"  icon={faTrashAlt} />
                     </button>
                     <button type="button" className="btn fs-4" onClick={()=>console.log(menu._id)} >

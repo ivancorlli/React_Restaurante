@@ -1,30 +1,25 @@
 import React from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row} from "react-bootstrap";
+import { useLocation } from "react-router";
 import Menues from "./Menues";
 
 const Productos = (props) => {
-  let cat = props.catalogos;
   const productos = props.productos;
+  const history = useLocation();
+  const hash = history.hash.split('#')[1];
+  
+  const menus = productos.filter(el => el.categoria === hash)
 
-  console.log(cat);
-  console.log(productos);
-
-  const renderMenu = (cat) => {
-
-    return (
-      <div>
-        <h3 id={cat.id} className="mb-3">
-          {cat.nombre}
-        </h3>
-        <Menues productos={productos.filter(p=>p.catalogoID==cat.id
-        )} />
-      </div>
-    );
-  };
 
   return (
     <Container>
-      {cat.map(renderMenu)}
+      <Row xs={1} md={3} className="g-4 pb-3 border-bottom mb-5">
+      {
+      menus?
+      menus.map(el=> <Menues menu={el} />)  
+      :<div></div>
+      }
+      </Row>
     </Container>
   );
 };

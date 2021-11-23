@@ -2,6 +2,7 @@ import MenuItem from "./MenuItem"
 import {useState, useEffect} from 'react'
 import { getMenus } from "../../../../helpers/getMenus"
 import createMenu from "../../../../helpers/createMenu"
+import { delMenu } from "../../../../helpers/delMenu"
 
 
 const initialForm = {
@@ -43,10 +44,14 @@ const Menus = () => {
         }
     }
 
+    async function handleDelete (id){
+        await delMenu(id);
+    }
+
     useEffect(() => {
         fetchData()
         return () => {}
-    }, [])
+    }, [handleDelete])
 
     return (
         <>
@@ -66,7 +71,7 @@ const Menus = () => {
                         info ? <h2>{info.msg}</h2>
                         :
                         menus ?
-                        menus.map(menu=><MenuItem menu={menu} key={menu._id}/>)
+                        menus.map(menu=><MenuItem menu={menu} key={menu._id} delMenu={handleDelete}/>)
                         : <div></div>
 
                     }

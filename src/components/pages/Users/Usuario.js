@@ -1,5 +1,5 @@
-import React from "react";
-import { Container, Row, Col, ListGroup, Card, Button } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col} from "react-bootstrap";
 
 import Cafe from "./cafe.jpg";
 
@@ -7,101 +7,138 @@ import Catalogo from "./Catalogo";
 import Productos from "./Productos";
 
 import '../css/catalogos.css'
+import { getMenus } from "../../../helpers/getMenus";
 
-const catalogo = [
-  { id: 1, nombre: "Cafeteria" },
-  { id: 2, nombre: "Hamburguesas" },
-  { id: 3, nombre: "Parrillada" },
-  { id: 4, nombre: "Pizzas" },
-  { id: 5, nombre: "Pastas" },
-  { id: 6, nombre: "Postres" },
+const initialCatalogo = [
+  { nombre: "desayuno" },
+  { nombre: "Hamburguesas" },
+  { nombre: "Parrillada" },
+  { nombre: "Pizzas" },
+  { nombre: "Pastas" },
+  { nombre: "Postres" },
 ];
 
-const productos = [
+const initialProductos = [
   {
     titulo: "Café con Leche",
     img: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
-    catalogoID: 1,
+    categoria: 'Hamburguesas',
   },
   {
     titulo: "Café con Leche",
     img: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
-    catalogoID: 1,
+    categoria: 'Hamburguesas',
   },
   {
     titulo: "Café con Leche",
     img: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
-    catalogoID: 2,
+    categoria: 'Hamburguesas',
   },
   {
     titulo: "Café con Leche",
     img: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
-    catalogoID: 3,
+    categoria: 'Pizzas',
   },
   {
     titulo: "Café con Leche",
     img: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
-    catalogoID: 3,
+    categoria: 'Pizzas',
   },
   {
     titulo: "Café con Leche",
     img: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
-    catalogoID: 4,
+    categoria: 'Pizzas',
   },
   {
     titulo: "Café con Leche",
     img: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
-    catalogoID: 5,
+    categoria: 'desayuno',
   },
   {
     titulo: "Café con Leche",
     img: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
-    catalogoID: 5,
+    categoria: 'desayuno',
   },
   {
     titulo: "Café con Leche",
     img: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
-    catalogoID: 5,
+    categoria: 'hamburgesas',
   },
   {
     titulo: "Café con Leche",
     img: Cafe,
     precio: "$100",
     descripcion: "Esto es un café con leche =D",
-    catalogoID: 6,
+    categoria: 'desayuno',
   },
 ];
+
 
 const Usuario = () => {
+
+  const [productos, setProductos] = useState(initialProductos)
+  const [catalogo, setCatalogo]= useState(initialCatalogo)
+
+  async function fetchData(){
+    let response = await  getMenus();
+    let {data} = response;
+    if(data && data.ok){
+        setProductos(data.menus)
+        let cat = data.menus.map(el=> {
+          let categorias={
+            nombre:el.categoria
+          }
+          return categorias
+        });
+        setCatalogo(cat)
+      }
+  }
+
+  useEffect(() => {
+    fetchData()
+    return () => {}
+  }, [])
+
+
   return (
     <Container fluid className="py-5">
       <Row>
         <Col sm={3}>
           <div className="catalogo">
             <h3>Catálogo</h3>
+            {catalogo
+            ? 
             <Catalogo catalogo={catalogo} />
+            :
+            <div></div>
+          }
           </div>
         </Col>
         <Col sm={9}>
-          <Productos catalogos={catalogo} productos={productos} />
+        {catalogo 
+            ? 
+            <Productos catalogos={catalogo} productos={productos} />
+            :
+            <div></div>
+          }
         </Col>
       </Row>
     </Container>

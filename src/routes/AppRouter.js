@@ -4,7 +4,7 @@ import About from "../components/About/About";
 import Menus from "../components/pages/Admin/menus/Menus";
 import Usuarios from "../components/pages/Admin/usuarios/Usuarios";
 import Error404 from "../components/pages/Home/Error404";
-import Home from "../components/pages/Home/home";
+import Home from "../components/pages/Home/Home";
 import Login from "../components/pages/Login";
 import Register from "../components/pages/Register";
 import AdminRoute from "./AdminRoute";
