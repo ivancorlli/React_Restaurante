@@ -14,7 +14,7 @@ const Usuarios = () => {
     function handleSearch (e){
         setSearch(e.target.value);
         if(users && search.length >= 3){
-           let user = users.filter(el=> el.name==search)
+           let user = users.filter(el=> el.name===search)
            if(user.length > 1){
                setUserSearch(user)
             }else{
@@ -40,9 +40,10 @@ const Usuarios = () => {
                 })
             }
         }
+
         useEffect(() => {
             fetchData()
-    }, [deleteUser])
+        }, [deleteUser])
     
     return (
         <>
@@ -51,7 +52,6 @@ const Usuarios = () => {
                 <form className="d-flex  justify-content-center">
                 <input className="form-control m-1 w-50" name='search' type="search" onChange={handleSearch} placeholder="Buscar Usuario" aria-label="Search"/>
                 <div className=" ms-4 d-flex">
-                <button className="btn btn-outline-dark m-1" type="submit">Buscar</button>
                 </div>
                  </form> 
                 </div>

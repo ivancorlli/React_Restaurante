@@ -13,6 +13,11 @@ import useUser from "../../hooks/useUser";
 
 import "./NavBar.css";
 
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faShoppingCart} from '@fortawesome/free-solid-svg-icons'
+
 export default function NavBarTranca() {
 
   const {userSession, logout} = useUser();
@@ -21,7 +26,7 @@ export default function NavBarTranca() {
     logout();
   }
     return (
-      <Navbar className="navContainer" variant="dark" color="white" expand="lg">
+      <Navbar className="navContainer position-sticky" variant="dark" color="white" expand="lg">
         <Container fluid>
           <Navbar.Brand href="/">Rolling-Menú</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -34,16 +39,6 @@ export default function NavBarTranca() {
               <Nav.Link href="/about">About</Nav.Link>
               <Nav.Link href="/contact">Contact</Nav.Link>
             </Nav>
-            <Container className="w-100">
-              <Form className="d-flex">
-                <FormControl
-                  type="search"
-                  placeholder="Buscar"
-                  className="me-2"
-                  aria-label="Search"
-                  />
-              </Form>
-            </Container>
               {
                userSession && userSession.role === 'ADMIN' &&(
                   <DropdownButton id="dropdown-basic-button" title="Admin">
@@ -52,15 +47,30 @@ export default function NavBarTranca() {
                   </DropdownButton>
                 )
               }
-            <Container className="d-flex justify-content-end m-2">
+            <Container className="d-flex text-center  align-items-center justify-content-end m-2">
+              {
+                userSession && userSession.role === 'USUARIO' && (
+                  <Nav.Link href='/cart'  className="btn border border-1 position-relative mx-2">
+                    <FontAwesomeIcon type='button' icon={faShoppingCart} className='fs-5 text-light text-center mx-2' />
+                      <span  className="position-absolute top-0 start-100 translate-middle p-2 bg-light border border-light rounded-circle d-none">
+                      </span>
+                  </Nav.Link>
+                )
+              }
+
               {userSession ? (
                 <Button onClick={handleClick} variant="outline-light" className="mx-2" href="/">
                   Log out
                 </Button>
               ) : (
+                <div className='d-flex'>
                 <Button variant="outline-light" className="mx-2" href="/login">
                   Log in
                 </Button>
+                <Nav.Link href='/register' className=" btn border border-1 text-light  mx-2">
+                    Sign Up
+                </Nav.Link>
+                </div>
               )}
             </Container>
           </Navbar.Collapse>
