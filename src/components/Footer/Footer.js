@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Nav } from "react-bootstrap";
 
-import "../Footer/footer.css";
+// import "./footer.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Footer() {
